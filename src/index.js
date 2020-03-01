@@ -6,7 +6,4 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
-serviceWorker.register({
-    onSuccess: () =>  alert('installed'),
-    onUpdate: reg => alert('to be updated' + JSON.stringify(reg)),
-});
+serviceWorker.register();
