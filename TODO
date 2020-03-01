@@ -8,5 +8,6 @@ MVP:
     ☐ Include IndexedDb promise library
     ☐ Setup PWA (https://blog.logrocket.com/from-create-react-app-to-pwa/)
     ☐ Generate an icon for PWA
+    ☐ Handle serviceWorkerUpdates (https://medium.com/@FezVrasta/service-worker-updates-and-error-handling-with-react-1a3730800e6a)
 
 
