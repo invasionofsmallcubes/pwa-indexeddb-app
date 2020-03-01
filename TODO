@@ -1,10 +1,10 @@
 MVP:
     ✔ Setup License @started(20-03-01 16:49) @done(20-03-01 16:49) @lasted(15s)
-    ☐ add material
+    ✔ add material @started(20-03-01 16:50) @done(20-03-01 17:01) @lasted(0h11m25s)
+    ✔ Deploy on firebase @started(20-03-01 17:01) @done(20-03-01 18:40) @lasted(1h39m36s)
     ☐ Write a really stupid form to add and remove lines (in memory repo is fine)
     ☐ Include react-router to defer link
     ☐ Check with audit for google chrome
-    ☐ Deploy on firebase
     ☐ Include IndexedDb promise library
     ☐ Setup PWA (https://blog.logrocket.com/from-create-react-app-to-pwa/)
     ☐ Generate an icon for PWA
