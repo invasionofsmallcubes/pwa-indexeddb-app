@@ -18,8 +18,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: yarn install
-    - run: yarn test
     - run: yarn build
+    - run: yarn test
       env:
         CI: true
     - name: Deploy to Firebase
