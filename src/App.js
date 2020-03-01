@@ -1,24 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ExternalLink from './ExternalLink';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Hello, welcome to <strong>pwa-indexeddb-app</strong>.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>It's a simple experiment to see if <ExternalLink link="https://web.dev/progressive-web-apps/" name="Progressive Web Apps" /> and <ExternalLink link="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API" name="IndexedDb" /> work together.</p>
       </header>
+      
     </div>
   );
 }
