@@ -35,8 +35,7 @@ export const ServiceWorkerProvider = ({ children }) => {
         isUpdateAvailable,
         updateAssets: () => {
             if (waitingServiceWorker) {
-                // We send the SKIP_WAITING message to tell the Service Worker
-                // to update its cache and flush the old one
+                console.log("sending SKIP WAITING");
                 waitingServiceWorker.postMessage({ type: 'SKIP_WAITING' });
             }
         }
