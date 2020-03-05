@@ -1,13 +1,13 @@
 MVP:
-    ✔ Setup License @started(20-03-01 16:49) @done(20-03-01 16:49) @lasted(15s)
-    ✔ add material @started(20-03-01 16:50) @done(20-03-01 17:01) @lasted(0h11m25s)
-    ✔ Deploy on firebase @started(20-03-01 17:01) @done(20-03-01 18:40) @lasted(1h39m36s)
+    ✔ Setup License @done(20-03-01 16:49)
+    ✔ add material @done(20-03-01 17:01)
+    ✔ Deploy on firebase @done(20-03-01 18:40)
+    ✔ Setup PWA (https://blog.logrocket.com/from-create-react-app-to-pwa/) @done(20-03-05 13:04)
+    ✔ Handle serviceWorkerUpdates (https://medium.com/@FezVrasta/service-worker-updates-and-error-handling-with-react-1a3730800e6a) @done(20-03-05 13:04)
     ☐ Write a really stupid form to add and remove lines (in memory repo is fine)
     ☐ Include react-router to defer link
     ☐ Check with audit for google chrome
     ☐ Include IndexedDb promise library
-    ☐ Setup PWA (https://blog.logrocket.com/from-create-react-app-to-pwa/)
     ☐ Generate an icon for PWA
-    ☐ Handle serviceWorkerUpdates (https://medium.com/@FezVrasta/service-worker-updates-and-error-handling-with-react-1a3730800e6a)
 
 
