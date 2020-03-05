@@ -1,12 +1,54 @@
-import ExternalLink from './ExternalLink';
+import './Main.css'
+
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+import Button from '@material-ui/core/Button';
+import FileCopyIcon from '@material-ui/icons/FileCopy';
+import ListIcon from '@material-ui/icons/List';
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(theme => ({
+    button: {
+        margin: theme.spacing(2),
+    },
+}));
 
 function Main() {
+
+    const classes = useStyles();
+
     return (
-        <header>
-            <p>Hello, welcome to <strong>pwa-indexeddb-app</strong></p>
-            <p>It's a simple experiment to see if <ExternalLink link="https://web.dev/progressive-web-apps/" name="Progressive Web Apps" /> and <ExternalLink link="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API" name="IndexedDb" /> work together.</p>
-        </header>
+        <div>
+            <p>A <strong>simple</strong> ToDo app</p>
+            <p>Create from your own <strong>template</strong></p>
+            <p><strong>No Internet</strong> required</p>
+            <p>Created by a traveller for travellers</p>
+            <div class="buttons">
+                <Button
+                    variant="contained"
+                    color="primary"
+                    className={classes.button}
+                    startIcon={<AddCircleIcon />}
+                >
+                    Create New ToDo
+                </Button>
+                <Button
+                    variant="contained"
+                    color="secondary"
+                    className={classes.button}
+                    startIcon={<ListIcon />}>
+                    My ToDos
+                    </Button>
+                <Button
+                    variant="contained"
+                    color="default"
+                    className={classes.button}
+                    startIcon={<FileCopyIcon />}
+                >
+                    Templates
+      </Button>
+            </div>
+        </div>
     );
 }
 

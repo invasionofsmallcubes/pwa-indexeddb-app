@@ -4,8 +4,8 @@ MVP:
     ✔ Deploy on firebase @done(20-03-01 18:40)
     ✔ Setup PWA (https://blog.logrocket.com/from-create-react-app-to-pwa/) @done(20-03-05 13:04)
     ✔ Handle serviceWorkerUpdates (https://medium.com/@FezVrasta/service-worker-updates-and-error-handling-with-react-1a3730800e6a) @done(20-03-05 13:04)
+    ✔ Include react-router to defer link @done(20-03-05 20:07)
     ☐ Write a really stupid form to add and remove lines (in memory repo is fine)
-    ☐ Include react-router to defer link
     ☐ Check with audit for google chrome
     ☐ Include IndexedDb promise library
     ☐ Generate an icon for PWA
