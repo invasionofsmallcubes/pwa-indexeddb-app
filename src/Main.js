@@ -13,9 +13,16 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-function Main() {
+function Main(props) {
 
     const classes = useStyles();
+
+    function goToCreateNote(e) {
+        e.preventDefault();
+        props.history.push({
+            pathname: '/notes/new'
+        })
+    }
 
     return (
         <div>
@@ -27,6 +34,7 @@ function Main() {
                 <Button
                     variant="contained"
                     color="primary"
+                    onClick={goToCreateNote}
                     className={classes.button}
                     startIcon={<AddCircleIcon />}
                 >

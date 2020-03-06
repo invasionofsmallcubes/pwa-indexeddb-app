@@ -1,7 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-function CreateNote(props) {
-    return (<div>CreateNote {props.noteId}</div>)
+function CreateNote() {
+    return (
+        <div>New Note</div>
+    );
 }
 
 export default CreateNote;

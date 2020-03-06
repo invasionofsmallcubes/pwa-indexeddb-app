@@ -5,6 +5,7 @@ MVP:
     ✔ Setup PWA (https://blog.logrocket.com/from-create-react-app-to-pwa/) @done(20-03-05 13:04)
     ✔ Handle serviceWorkerUpdates (https://medium.com/@FezVrasta/service-worker-updates-and-error-handling-with-react-1a3730800e6a) @done(20-03-05 13:04)
     ✔ Include react-router to defer link @done(20-03-05 20:07)
+        this is how to move around pages with react-dom: https://stackoverflow.com/questions/44121069/how-to-pass-params-with-history-push-link-redirect-in-react-router-v4
     ☐ Write a really stupid form to add and remove lines (in memory repo is fine)
     ☐ Check with audit for google chrome
     ☐ Include IndexedDb promise library
