@@ -24,7 +24,13 @@ const useStyles = makeStyles(theme => ({
     focused: {},
 }));
 
-const useStyles1 = makeStyles(theme => ({
+const useFormWidthStyle = makeStyles(theme => ({
+    root: {
+        width: "90%"
+    }
+}))
+
+const useStylesForLabel = makeStyles(theme => ({
     root: {
         overflow: 'hidden',
         padding: 5,
@@ -42,22 +48,38 @@ const useStyles1 = makeStyles(theme => ({
     focused: {},
 }));
 
-function CreateNote() {
+function CreateNote(props) {
     const classes = useStyles();
-    const classesLabel = useStyles1();
+    const classesLabel = useStylesForLabel();
+    const classesForm = useFormWidthStyle();
 
-    function createNote() {
+    const [values, setValues] = React.useState({
+        title: undefined,
+    });
 
+    function createNote(e) {
+        e.preventDefault();
+        const id = props.noteRepository.create(values.title);
+        props.history.push({
+            pathname: '/notes/' + id
+        })
+    }
+
+    function updateTitle(e) {
+        e.preventDefault();
+        setValues({ ...values, title: e.target.value })
     }
 
     return (
-        <form noValidate autoComplete="off">
-            <div>
+        <form className={classes.maxWidthStyle} noValidate autoComplete="off">
+            <div >
                 <TextField
                     id="title"
                     label="Title"
-                    InputLabelProps={{ classes: classesLabel, disableUnderline: true }}
-                    InputProps={{ classes, disableUnderline: true }} />
+                    onChange={updateTitle}
+                    className={classesForm.root}
+                    InputLabelProps={{ classes: classesLabel }}
+                    InputProps={{ classes }} />
             </div>
             <div>
                 <Button
