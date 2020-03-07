@@ -17,7 +17,7 @@ function Main(props) {
 
     const classes = useStyles();
 
-    function goToCreateNote(e) {
+    function goToCreateTodo(e) {
         e.preventDefault();
         props.history.push({
             pathname: '/notes/new'
@@ -34,7 +34,7 @@ function Main(props) {
                 <Button
                     variant="contained"
                     color="primary"
-                    onClick={goToCreateNote}
+                    onClick={goToCreateTodo}
                     className={classes.button}
                     startIcon={<AddCircleIcon />}
                 >

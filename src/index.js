@@ -5,22 +5,22 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter, Switch } from "react-router-dom";
 
 import App from './App';
-import CreateNote from './CreateNote';
+import CreateTodo from './CreateTodo';
 import Main from './Main';
-import NoteRepository from './NoteRepository';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReadNote from './ReadNote';
+import ReadTodo from './ReadTodo';
 import { Route } from 'react-router';
 import { ServiceWorkerProvider } from './ServiceWorkerProvider';
+import TodoRepository from './TodoRepository';
 
-const noteRepository = NoteRepository();
+const noteRepository = TodoRepository();
 
 ReactDOM.render(
     <ServiceWorkerProvider>
         <BrowserRouter>
             <Switch>
-                <Route exact={true} path='/notes/new' render={routeProps => <App {...routeProps} child={<CreateNote {...routeProps} noteRepository={noteRepository} />} />}>
+                <Route exact={true} path='/notes/new' render={routeProps => <App {...routeProps} child={<CreateTodo {...routeProps} noteRepository={noteRepository} />} />}>
                 </Route>
                 <Route path='/notes/:noteId'
                     render={routeProps => {
@@ -28,7 +28,7 @@ ReactDOM.render(
                         let note = undefined;
                         if (routeProps.location.state) { note = routeProps.location.state.note; }
                         return <App {...routeProps}
-                            child={<ReadNote {...routeProps}
+                            child={<ReadTodo {...routeProps}
                                 noteId={noteId} note={note} noteRepository={noteRepository} />} />
                     }} />
                 <Route exact path='/' render={props => <App child={<Main {...props} />} />}>

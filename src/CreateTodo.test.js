@@ -1,14 +1,14 @@
 import { fireEvent, render } from '@testing-library/react';
 
-import CreateNote from './CreateNote';
-import { Note } from './NoteRepository'
+import CreateTodo from './CreateTodo';
 import React from 'react';
+import { Todo } from './TodoRepository'
 
 test('renders learn react link', () => {
 
     const title = 'my title';
     const id = 'id';
-    const note = Note(id);
+    const note = Todo(id);
 
     const noteRepository = {
         create: jest.fn((title) => note)
@@ -18,7 +18,7 @@ test('renders learn react link', () => {
         push: jest.fn(({ pathname, state }) => { })
     }
 
-    const { getByLabelText, getByText } = render(<CreateNote
+    const { getByLabelText, getByText } = render(<CreateTodo
         noteRepository={noteRepository}
         history={historyProps} />);
 

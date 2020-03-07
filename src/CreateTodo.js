@@ -48,7 +48,7 @@ const useStylesForLabel = makeStyles(theme => ({
     focused: {},
 }));
 
-function CreateNote(props) {
+function CreateTodo(props) {
     const classes = useStyles();
     const classesLabel = useStylesForLabel();
     const classesForm = useFormWidthStyle();
@@ -57,7 +57,7 @@ function CreateNote(props) {
         title: undefined,
     });
 
-    function createNote(e) {
+    function createTodo(e) {
         e.preventDefault();
         const note = props.noteRepository.create(values.title);
         props.history.push({
@@ -86,7 +86,7 @@ function CreateNote(props) {
                 <Button
                     variant="contained"
                     color="primary"
-                    onClick={createNote}
+                    onClick={createTodo}
                     startIcon={<AddCircleIcon />}
                 >
                     Create New ToDo
@@ -96,4 +96,4 @@ function CreateNote(props) {
     );
 }
 
-export default CreateNote;
+export default CreateTodo;
