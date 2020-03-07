@@ -59,9 +59,10 @@ function CreateNote(props) {
 
     function createNote(e) {
         e.preventDefault();
-        const id = props.noteRepository.create(values.title);
+        const note = props.noteRepository.create(values.title);
         props.history.push({
-            pathname: '/notes/' + id
+            pathname: '/notes/' + note.id,
+            state: { note: note }
         })
     }
 

@@ -23,10 +23,13 @@ ReactDOM.render(
                 <Route exact={true} path='/notes/new' render={routeProps => <App {...routeProps} child={<CreateNote {...routeProps} noteRepository={noteRepository} />} />}>
                 </Route>
                 <Route path='/notes/:noteId'
-                    render={props => {
-                        const noteId = props.match.params.noteId;
-                        return <App child={<ReadNote noteId={noteId} />
-                        } />
+                    render={routeProps => {
+                        const noteId = routeProps.match.params.noteId;
+                        let note = undefined;
+                        if (routeProps.location.state) { note = routeProps.location.state.note; }
+                        return <App {...routeProps}
+                            child={<ReadNote {...routeProps}
+                                noteId={noteId} note={note} noteRepository={noteRepository} />} />
                     }} />
                 <Route exact path='/' render={props => <App child={<Main {...props} />} />}>
                 </Route>
