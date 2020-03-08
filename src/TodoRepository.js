@@ -7,10 +7,10 @@ export function Todo(id, title) {
 
 function TodoRepository() {
     return {
-        create: (title) => {
+        create: async ({ title }) => {
             return Todo('id', title);
         },
-        get: (id) => {
+        get: async ({ id }) => {
             return Todo(id, 'title');
         }
     }
