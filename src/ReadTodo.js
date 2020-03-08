@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CreateTodo(props) {
+function ReadTodo(props) {
     if (props.note) {
         const note = props.note;
         return (<div>ReadTodo {note.id} {note.title}</div>)
@@ -9,4 +9,4 @@ function CreateTodo(props) {
     return (<div>ReadTodo {note.id} {note.title}</div>)
 }
 
-export default CreateTodo;
+export default ReadTodo;

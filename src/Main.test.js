@@ -10,9 +10,6 @@ test('renders learn react link', () => {
 });
 
 test('when I click on create new, I go on the component where I can create a note', () => {
-  const historyProps = {
-    push: jest.fn(({ pathname }) => { })
-  }
 
   const { getByText } = render(<Main history={historyProps} />);
   const linkElement = getByText(/Create New ToDo/i);

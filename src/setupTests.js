@@ -3,3 +3,19 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom/extend-expect';
+
+import { Todo } from './TodoRepository';
+
+global.todoId = 'id';
+global.todoTitle = 'my title';
+
+global.todo = Todo(todoId, todoTitle);
+
+global.asyncNodeRepository = {
+    async create(title) { return Todo(todoId, title) },
+    get(id) { return Todo(id, todoTitle) }
+};
+
+global.historyProps = {
+    push: jest.fn(({ pathname, state }) => { })
+}
