@@ -60,7 +60,7 @@ function CreateTodo(props) {
     async function createTodo(e) {
         e.preventDefault();
         try {
-            const note = await props.noteRepository.create(values.title);
+            const note = await props.noteRepository.create({ title: values.title });
             props.history.push({
                 pathname: '/notes/' + note.id,
                 state: { note: note }
