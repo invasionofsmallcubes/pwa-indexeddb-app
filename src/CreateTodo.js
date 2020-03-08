@@ -57,13 +57,17 @@ function CreateTodo(props) {
         title: undefined,
     });
 
-    function createTodo(e) {
+    async function createTodo(e) {
         e.preventDefault();
-        const note = props.noteRepository.create(values.title);
-        props.history.push({
-            pathname: '/notes/' + note.id,
-            state: { note: note }
-        })
+        try {
+            const note = await props.noteRepository.create(values.title);
+            props.history.push({
+                pathname: '/notes/' + note.id,
+                state: { note: note }
+            });
+        } catch (e) {
+            console.log(e);
+        }
     }
 
     function updateTitle(e) {
