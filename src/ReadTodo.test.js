@@ -4,7 +4,7 @@ import React from 'react';
 import ReadTodo from './ReadTodo';
 
 test('renders learn react through id', async (done) => {
-    const { getByText } = render(<ReadTodo noteId={todoId} noteRepository={asyncNodeRepository} />);
+    const { getByText } = render(<ReadTodo todoId={todoId} todoRepository={asyncNodeRepository} />);
 
     setTimeout(() => {
         const div = getByText(/ReadTodo/i);
@@ -14,7 +14,7 @@ test('renders learn react through id', async (done) => {
 });
 
 test('renders learn react through state', () => {
-    const { getByText } = render(<ReadTodo note={todo} />);
+    const { getByText } = render(<ReadTodo todo={todo} />);
 
     const text = getByText(/ReadTodo/i);
 

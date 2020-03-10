@@ -9,12 +9,12 @@ test('renders learn react link', () => {
   expect(linkElement).toBeInTheDocument();
 });
 
-test('when I click on create new, I go on the component where I can create a note', () => {
+test('when I click on create new, I go on the component where I can create a todo', () => {
 
   const { getByText } = render(<Main history={historyProps} />);
   const linkElement = getByText(/Create New ToDo/i);
   fireEvent.click(linkElement);
 
   expect(historyProps.push.mock.calls.length).toBe(1);
-  expect(historyProps.push.mock.calls[0][0].pathname).toBe('/notes/new');
+  expect(historyProps.push.mock.calls[0][0].pathname).toBe('/todos/new');
 })

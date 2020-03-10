@@ -6,7 +6,7 @@ import React from 'react';
 test('I can create a Todo clicking the button', async (done) => {
 
     const { getByLabelText, getByText } = render(<CreateTodo
-        noteRepository={asyncNodeRepository}
+        todoRepository={asyncNodeRepository}
         history={historyProps} />);
 
     const input = getByLabelText(/Title/i);
@@ -18,8 +18,8 @@ test('I can create a Todo clicking the button', async (done) => {
     setTimeout(() => {
         try {
             expect(historyProps.push.mock.calls[0].length).toBe(1);
-            expect(historyProps.push.mock.calls[0][0]['pathname']).toBe('/notes/' + todoId);
-            expect(historyProps.push.mock.calls[0][0]['state'].note).toMatchObject(todo);
+            expect(historyProps.push.mock.calls[0][0]['pathname']).toBe('/todos/' + todoId);
+            expect(historyProps.push.mock.calls[0][0]['state'].todo).toMatchObject(todo);
         } catch (e) {
             done(e);
         }

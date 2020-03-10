@@ -14,22 +14,22 @@ import { Route } from 'react-router';
 import { ServiceWorkerProvider } from './ServiceWorkerProvider';
 import TodoRepository from './TodoRepository';
 
-const noteRepository = TodoRepository();
+const todoRepository = TodoRepository();
 
 ReactDOM.render(
     <ServiceWorkerProvider>
         <BrowserRouter>
             <Switch>
-                <Route exact={true} path='/notes/new' render={routeProps => <App {...routeProps} child={<CreateTodo {...routeProps} noteRepository={noteRepository} />} />}>
+                <Route exact={true} path='/todos/new' render={routeProps => <App {...routeProps} child={<CreateTodo {...routeProps} todoRepository={todoRepository} />} />}>
                 </Route>
-                <Route path='/notes/:noteId'
+                <Route path='/todos/:todoId'
                     render={routeProps => {
-                        const noteId = routeProps.match.params.noteId;
-                        let note = undefined;
-                        if (routeProps.location.state) { note = routeProps.location.state.note; }
+                        const todoId = routeProps.match.params.todoId;
+                        let todo = undefined;
+                        if (routeProps.location.state) { todo = routeProps.location.state.todo; }
                         return <App {...routeProps}
                             child={<ReadTodo {...routeProps}
-                                noteId={noteId} note={note} noteRepository={noteRepository} />} />
+                                todoId={todoId} todo={todo} todoRepository={todoRepository} />} />
                     }} />
                 <Route exact path='/' render={props => <App child={<Main {...props} />} />}>
                 </Route>

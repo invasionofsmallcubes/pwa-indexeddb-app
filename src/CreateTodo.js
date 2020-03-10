@@ -60,10 +60,10 @@ function CreateTodo(props) {
     async function createTodo(e) {
         e.preventDefault();
         try {
-            const note = await props.noteRepository.create({ title: values.title });
+            const todo = await props.todoRepository.create({ title: values.title });
             props.history.push({
-                pathname: '/notes/' + note.id,
-                state: { note: note }
+                pathname: '/todos/' + todo.id,
+                state: { todo: todo }
             });
         } catch (e) {
             console.log(e);
