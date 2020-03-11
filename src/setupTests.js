@@ -23,19 +23,9 @@ global.asyncTodoRepository = (promise) => {
     }
 };
 
-
-global.historyProps = {
-    push: jest.fn(({ pathname, state }) => {
-        console.log(pathname)
-        console.log(state)
-    })
-}
-
-global.historyProps2 = (promise) => {
+global.historyProps = (promise) => {
     return {
         push: jest.fn(({ pathname, state }) => {
-            console.log(pathname)
-            console.log(state)
             return promise
         })
     }
