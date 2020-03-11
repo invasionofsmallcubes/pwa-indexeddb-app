@@ -7,10 +7,11 @@ test('I can create a Todo clicking the button', async () => {
 
     const success = Promise.resolve(todo);
     const historyResolve = Promise.resolve();
+    const historyProps = historyProps2(historyResolve);
 
     const { getByLabelText, getByText } = render(<CreateTodo
         todoRepository={asyncTodoRepository(success)}
-        history={historyProps2(historyResolve)} />);
+        history={historyProps} />);
 
     const input = getByLabelText(/Title/i);
     const button = getByText(/Create/i);
