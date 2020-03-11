@@ -11,11 +11,6 @@ global.todoTitle = 'my title';
 
 global.todo = Todo(todoId, todoTitle);
 
-global.asyncNodeRepository = {
-    async create({ title }) { return Todo(todoId, title) },
-    async get({ id }) { return Todo(id, todoTitle) }
-};
-
 global.asyncTodoRepository = (promise) => {
     return {
         async create({ title }) { return promise },
@@ -26,7 +21,7 @@ global.asyncTodoRepository = (promise) => {
 global.historyProps = (promise) => {
     return {
         push: jest.fn(({ pathname, state }) => {
-            return promise
+            promise
         })
     }
 }
