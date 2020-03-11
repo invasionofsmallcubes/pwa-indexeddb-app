@@ -20,9 +20,10 @@ test('I can create a Todo clicking the button', async () => {
     fireEvent.change(input, { target: { value: todoTitle } });
     fireEvent.click(button)
 
-    await success;
     await historyResolve;
+    await success;
 
+    console.log('Hello');
     expect(hp.push.mock.calls[0].length).toBe(1);
     expect(hp.push.mock.calls[0][0]['pathname']).toBe('/todos/' + todoId);
     expect(hp.push.mock.calls[0][0]['state'].todo).toMatchObject(todo);
