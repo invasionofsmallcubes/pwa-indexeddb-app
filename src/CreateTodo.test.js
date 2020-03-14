@@ -4,27 +4,29 @@ import CreateTodo from './CreateTodo';
 import React from 'react';
 
 test('I can create a Todo clicking the button', async () => {
+    try {
+        const success = Promise.resolve(todo);
+        const successb = Promise.resolve();
 
-    const success = Promise.resolve(todo);
-    const historyResolve = Promise.resolve();
+        const hp = historyProps(successb);
 
-    const hp = historyProps(historyResolve);
+        const { getByLabelText, getByText } = render(<CreateTodo
+            todoRepository={asyncTodoRepository(success)}
+            history={hp} />);
 
-    const { getByLabelText, getByText } = render(<CreateTodo
-        todoRepository={asyncTodoRepository(success)}
-        history={hp} />);
+        const input = getByLabelText(/Title/i);
+        const button = getByText(/Create/i);
 
-    const input = getByLabelText(/Title/i);
-    const button = getByText(/Create/i);
+        fireEvent.change(input, { target: { value: todoTitle } });
+        fireEvent.click(button)
 
-    fireEvent.change(input, { target: { value: todoTitle } });
-    fireEvent.click(button)
+        await successb;
+        await success;
 
-    await historyResolve;
-    await success;
+        expect(hp.push.mock.calls[0].length).toBe(1);
+        expect(hp.push.mock.calls[0][0]['pathname']).toBe('/todos/' + todoId);
+        expect(hp.push.mock.calls[0][0]['state'].todo).toMatchObject(todo);
+    } catch (e) {
 
-    console.log('Hello');
-    expect(hp.push.mock.calls[0].length).toBe(1);
-    expect(hp.push.mock.calls[0][0]['pathname']).toBe('/todos/' + todoId);
-    expect(hp.push.mock.calls[0][0]['state'].todo).toMatchObject(todo);
+    }
 });
