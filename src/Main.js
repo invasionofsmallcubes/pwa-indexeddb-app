@@ -20,7 +20,7 @@ function Main(props) {
     function goToCreateTodo(e) {
         e.preventDefault();
         props.history.push({
-            pathname: '/notes/new'
+            pathname: '/todos/new'
         })
     }
 
